@@ -1,0 +1,54 @@
+import random
+
+def rock_paper_scizzor():
+    print('\n')
+    print("   **** Lets Play **** \n")
+    print('Make your selection below')
+    print('1. Rock')
+    print('2. Paper')
+    print('3. Scizzors')
+    print('4. Quit \n')
+
+    computer_list= {'1' : 'Rock', '2' : 'Paper', '3' : 'Scizzors'}
+    computer_choice = random.choice(list(computer_list))
+    selection = input('User Chooses:') 
+
+    if selection == '4':
+        print('Thanks for playing!')
+
+    elif (selection == '1' and computer_choice == '2'):
+        print('Computer chooses:' + str(computer_choice), '\n')
+        print('Paper Beats Rock: Computer Wins!')
+        rock_paper_scizzor()
+    
+    elif (selection == '2' and computer_choice == '1'):
+        print('Computer chooses:' + str(computer_choice), '\n')
+        print('Paper Beats Rock: User Wins!')
+        rock_paper_scizzor()
+    
+    elif (selection == '3' and computer_choice == '2'):
+        print('Computer chooses:' + str(computer_choice), '\n')
+        print('Scizzors Beats Paper: User Wins!')
+        rock_paper_scizzor()
+   
+    elif (selection == "2" and computer_choice == '3'):
+        print('Computer chooses:' + str(computer_choice), '\n')
+        print('Scizzors Beats Paper: Computer Wins!')
+        rock_paper_scizzor()
+    
+    elif (selection == '1' and computer_choice == '3'):
+        print('Computer chooses:' + str(computer_choice), '\n')
+        print('Rock Beats Scizzors: User Wins!')
+        rock_paper_scizzor()
+    
+    elif (selection == '3' and computer_choice == '1'):
+        print('Computer chooses:' + str(computer_choice), '\n')
+        print('Rock Beats Scizzors: Computer Wins!')
+        rock_paper_scizzor()
+
+    else:
+        print('Computer chooses:' + str(computer_choice), '\n')
+        print('It\'s a Draw!')
+        rock_paper_scizzor()
+
+rock_paper_scizzor()
